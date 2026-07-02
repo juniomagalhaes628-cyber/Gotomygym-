@@ -36,7 +36,7 @@ export function Gallery() {
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {images.map((file, i) => (
             <Reveal key={file} delay={(i % 3) * 0.06}>
-              <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/5">
+              <div className="card-hover relative aspect-square overflow-hidden rounded-2xl border border-white/5 hover:border-accent/40">
                 <Image
                   src={`/gallery/${file}`}
                   alt={`Go to Gym — fotografia ${i + 1}`}

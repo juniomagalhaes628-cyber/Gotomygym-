@@ -23,7 +23,7 @@ export function Faq() {
                   {faq.question}
                   <span
                     aria-hidden="true"
-                    className="text-2xl leading-none text-accent transition-transform group-open:rotate-45"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center border border-accent/40 text-xl leading-none text-accent transition-transform group-open:rotate-45"
                   >
                     +
                   </span>

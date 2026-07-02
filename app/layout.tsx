@@ -1,18 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Inter } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import { business } from "@/lib/business";
 import { buildLocalBusinessJsonLd } from "@/lib/jsonld";
 import "./globals.css";
 
-const display = Anton({
+// Dupla tipográfica clássica de marcas desportivas:
+// Barlow Condensed para títulos, Barlow para texto.
+const display = Barlow_Condensed({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
-const sans = Inter({
+const sans = Barlow({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });

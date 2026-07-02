@@ -8,8 +8,17 @@ import { ArrowRightIcon } from "@/components/icons";
  */
 export function CtaBanner() {
   return (
-    <section className="bg-accent py-20">
-      <div className="mx-auto max-w-6xl px-6 text-center sm:px-8">
+    <section className="relative overflow-hidden bg-accent py-20">
+      {/* motivo do logo em outline sobre o amarelo */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-20 top-1/2 h-80 w-80 -translate-y-1/2 rotate-12 border-[6px] border-ink/10"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-1/2 h-64 w-64 -translate-y-1/2 -rotate-6 border-4 border-ink/10"
+      />
+      <div className="relative mx-auto max-w-6xl px-6 text-center sm:px-8">
         <Reveal>
           <h2 className="font-display text-4xl uppercase leading-[0.95] tracking-wide text-ink sm:text-6xl md:text-7xl">
             Disciplina

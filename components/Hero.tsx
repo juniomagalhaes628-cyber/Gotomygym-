@@ -26,6 +26,16 @@ export function Hero() {
     <section id="inicio" className="relative flex min-h-svh items-center overflow-hidden bg-ink">
       <HeroBackground />
 
+      {/* motivo do logo: quadrados decorativos em outline */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-28 top-1/2 z-[1] hidden h-[30rem] w-[30rem] -translate-y-1/2 rotate-12 border-[6px] border-accent/10 lg:block"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-4 top-1/2 z-[1] hidden h-72 w-72 -translate-y-1/3 -rotate-6 border-4 border-accent/[0.07] lg:block"
+      />
+
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-28 pb-20 sm:px-8">
         <motion.p
           {...fadeUp(0.05)}
@@ -56,7 +66,7 @@ export function Hero() {
             href={whatsappUrl(TRIAL_MESSAGE)}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 font-semibold text-ink transition-colors hover:bg-accent-strong"
+            className="btn-glow group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 font-semibold text-ink hover:bg-accent-strong"
           >
             Marca uma aula experimental
             <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />

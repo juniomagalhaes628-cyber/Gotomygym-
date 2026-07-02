@@ -54,7 +54,7 @@ export function Schedule() {
                           </span>
                         ) : null}
                       </th>
-                      <td className="px-6 py-5 text-right font-display text-lg tracking-wider text-accent">
+                      <td className="px-6 py-5 text-right font-display text-lg tabular-nums tracking-wider text-accent">
                         {slot.opens}
                         <span className="px-2 text-zinc-500">—</span>
                         {slot.closes}

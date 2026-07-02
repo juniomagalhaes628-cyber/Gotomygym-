@@ -42,7 +42,7 @@ export function Plans() {
                 href={whatsappUrl(PRICE_MESSAGE)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-accent px-6 py-3.5 font-semibold text-ink transition-colors hover:bg-accent-strong"
+                className="btn-glow mt-6 inline-flex items-center justify-center rounded-full bg-accent px-6 py-3.5 font-semibold text-ink hover:bg-accent-strong"
               >
                 Pedir preçário
               </a>
