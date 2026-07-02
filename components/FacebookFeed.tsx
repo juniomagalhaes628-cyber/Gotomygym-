@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { business } from "@/lib/business";
-import { LazyMount } from "@/components/LazyMount";
+import { ConsentEmbed } from "@/components/ConsentEmbed";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FacebookIcon } from "@/components/icons";
@@ -23,8 +23,9 @@ const FB_SDK_ID = "facebook-jssdk";
  * Facebook Page Plugin oficial (XFBML + SDK), a mostrar o timeline real
  * da página — puxa sempre os posts atuais, sem manutenção manual.
  *
- * O SDK só é injetado quando a secção se aproxima do viewport (via
- * LazyMount), por isso não bloqueia o render inicial nem afeta o LCP.
+ * O SDK só é injetado depois de o visitante clicar em "Carregar
+ * publicações" (ConsentEmbed) — os cookies do Facebook só são colocados
+ * com esse consentimento, e o render inicial fica livre de terceiros.
  */
 function FacebookPagePlugin() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -88,15 +89,15 @@ export function FacebookFeed() {
 
         <Reveal>
           <div className="mx-auto max-w-lg rounded-2xl border border-white/5 bg-carbon p-4 sm:p-6">
-            <LazyMount
-              placeholder={
-                <div className="flex h-[700px] items-center justify-center text-sm text-zinc-500">
-                  A carregar as novidades do Facebook…
-                </div>
-              }
+            <ConsentEmbed
+              service="Facebook"
+              buttonLabel="Carregar publicações"
+              note="Ao carregar, ligas-te aos servidores do {service}, que pode colocar cookies. Consulta a nossa política de privacidade."
+              icon={<FacebookIcon className="h-10 w-10" />}
+              className="min-h-[320px]"
             >
               <FacebookPagePlugin />
-            </LazyMount>
+            </ConsentEmbed>
           </div>
 
           <p className="mt-6 text-center">

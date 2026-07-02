@@ -26,12 +26,17 @@ export function Plans() {
                 <StarIcon className="h-7 w-7" />
               </div>
               <h3 className="font-display text-xl uppercase tracking-wide text-white">
-                Mensalidades flexíveis
+                Mensalidade
               </h3>
+              <p className="mt-4 font-display text-5xl tracking-wide text-accent">
+                {business.pricing.monthly}€
+                <span className="ml-1 font-sans text-base font-normal text-smoke">
+                  /mês
+                </span>
+              </p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-smoke">
-                Planos ajustados aos teus objetivos e à tua rotina, sem
-                complicações. Pede o preçário sem qualquer compromisso —
-                respondemos no próprio dia.
+                Acesso completo ao ginásio com acompanhamento da equipa.
+                Fala connosco sem compromisso — respondemos no próprio dia.
               </p>
               <a
                 href={whatsappUrl(PRICE_MESSAGE)}

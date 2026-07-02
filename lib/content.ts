@@ -115,9 +115,9 @@ export const faqs: Faq[] = [
       "Segunda a sexta das 7h às 22h, sábado das 7h às 19h e domingo das 8h às 12h.",
   },
   {
-    question: "Como sei os preços e planos?",
+    question: "Quanto custa a mensalidade?",
     answer:
-      "Fala connosco pelo WhatsApp ou visita-nos — explicamos as opções sem compromisso e ajudamos-te a escolher o plano certo para ti. Fica também atento às campanhas que lançamos no Facebook.",
+      "A mensalidade é de 24€/mês, com acesso completo ao ginásio. Fala connosco pelo WhatsApp para saberes as condições — e fica atento às campanhas que lançamos no Facebook.",
   },
   {
     question: "Aceitam Urban Sports Club?",

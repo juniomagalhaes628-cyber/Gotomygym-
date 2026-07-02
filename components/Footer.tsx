@@ -83,9 +83,27 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl border-t border-white/5 px-6 pt-6 text-sm text-zinc-500 sm:px-8">
-        © {new Date().getFullYear()} {business.name}® — marca registada. Todos
-        os direitos reservados.
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/5 px-6 pt-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <span>
+          © {new Date().getFullYear()} {business.name}® — marca registada.
+          Todos os direitos reservados.
+        </span>
+        <span className="flex flex-wrap gap-x-5 gap-y-2">
+          <a
+            href="/privacidade"
+            className="transition-colors hover:text-accent"
+          >
+            Política de Privacidade
+          </a>
+          <a
+            href="https://www.livroreclamacoes.pt/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
+            Livro de Reclamações
+          </a>
+        </span>
       </div>
     </footer>
   );

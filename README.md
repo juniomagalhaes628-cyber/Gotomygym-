@@ -68,6 +68,12 @@ lib/
 
 Coloca as fotografias em **`public/gallery/`** (jpg, png ou webp) — aparecem automaticamente na secção "Galeria" por ordem alfabética (usa nomes tipo `01-sala.jpg`, `02-equipa.jpg` para controlar a ordem). Sem fotos na pasta, a secção fica oculta.
 
+> As imagens atuais são placeholders de marca gerados automaticamente — substitui-as por fotografias reais do ginásio quando as tiveres (basta apagar as atuais e colocar as novas).
+
+### Preço da mensalidade
+
+Em **`lib/business.ts`**, campo `pricing.monthly` — atualiza o número e o site inteiro (secção Planos, FAQ, página EN e schema do Google) muda de uma vez.
+
 ### Avaliações e FAQ
 
 As avaliações do Google e as perguntas frequentes estão em **`lib/content.ts`** (`reviews` e `faqs`). As FAQ geram automaticamente o schema FAQPage para os resultados do Google.
@@ -84,6 +90,16 @@ O site envia headers de segurança configurados em `next.config.ts`:
 - **X-Content-Type-Options: nosniff**, **X-Frame-Options: SAMEORIGIN** (anti-clickjacking), **Referrer-Policy**, **Permissions-Policy** (câmara/microfone/localização desativados) e **Strict-Transport-Security** (força HTTPS).
 
 Além disso: não há base de dados nem área de administração para atacar (site estático), não há plugins de terceiros, todos os links externos usam `rel="noopener noreferrer"`, e o formulário não guarda dados — abre diretamente o WhatsApp.
+
+### Privacidade / RGPD
+
+- Os embeds do Google Maps e do Facebook são **click-to-load**: só carregam (e só colocam cookies) depois de o visitante clicar. Sem clique, zero pedidos a terceiros — por isso não é necessário banner de cookies.
+- Página de privacidade em `/privacidade` (`app/privacidade/page.tsx`).
+- Link para o Livro de Reclamações eletrónico no footer (obrigatório por lei).
+
+### Versão em inglês
+
+`/en` (`app/en/page.tsx`) é uma página dirigida a turistas e visitantes (hóspedes das Termas de São Vicente), com avaliações de visitantes estrangeiros, horários e localização. Ligada via hreflang e acessível pelo botão "EN" no menu.
 
 ## Performance
 

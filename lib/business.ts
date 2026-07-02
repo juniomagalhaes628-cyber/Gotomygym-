@@ -60,6 +60,11 @@ export const business = {
   // Marca nacional registada n.º 701486 (Go to Gym, Unipessoal Lda)
   legalName: "Go to Gym, Unipessoal Lda",
 
+  pricing: {
+    monthly: 24, // mensalidade em euros — edita aqui
+    currency: "EUR",
+  },
+
   /**
    * Horários de funcionamento.
    * `days` usa os códigos schema.org (Monday...Sunday) para o JSON-LD.

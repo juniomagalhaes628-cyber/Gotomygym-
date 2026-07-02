@@ -43,7 +43,13 @@ export function buildLocalBusinessJsonLd() {
       opens: h.opens,
       closes: h.closes,
     })),
-    priceRange: "€€",
+    priceRange: "€",
+    makesOffer: {
+      "@type": "Offer",
+      name: "Mensalidade",
+      price: business.pricing.monthly,
+      priceCurrency: business.pricing.currency,
+    },
   };
 }
 

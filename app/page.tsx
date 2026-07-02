@@ -11,6 +11,7 @@ import { Location } from "@/components/Location";
 import { Plans } from "@/components/Plans";
 import { Reviews } from "@/components/Reviews";
 import { Schedule } from "@/components/Schedule";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { buildFaqJsonLd } from "@/lib/jsonld";
 
 export default function HomePage() {
@@ -37,6 +38,7 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

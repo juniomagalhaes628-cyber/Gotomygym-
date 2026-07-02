@@ -1,5 +1,5 @@
 import { business, directionsUrl, mapEmbedUrl } from "@/lib/business";
-import { LazyMount } from "@/components/LazyMount";
+import { ConsentEmbed } from "@/components/ConsentEmbed";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { MapPinIcon } from "@/components/icons";
@@ -44,23 +44,22 @@ export function Location() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <LazyMount
-              className="h-full min-h-80 overflow-hidden rounded-2xl border border-white/5"
-              placeholder={
-                <div className="flex h-full min-h-80 items-center justify-center bg-steel/60 text-sm text-zinc-500">
-                  A carregar o mapa…
-                </div>
-              }
+            <ConsentEmbed
+              service="Google Maps"
+              buttonLabel="Mostrar mapa"
+              note="Ao carregar, ligas-te aos servidores do {service}, que pode colocar cookies. Em alternativa usa o botão «Como chegar»."
+              icon={<MapPinIcon className="h-10 w-10" />}
+              className="h-full min-h-80 rounded-2xl border border-white/5 bg-steel/60"
             >
               <iframe
                 src={mapEmbedUrl}
                 title={`Mapa — ${business.name}, ${business.address.full}`}
-                className="h-full min-h-80 w-full border-0 grayscale-[35%] contrast-[1.05]"
+                className="h-full min-h-80 w-full rounded-2xl border-0 grayscale-[35%] contrast-[1.05]"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </LazyMount>
+            </ConsentEmbed>
           </Reveal>
         </div>
       </div>

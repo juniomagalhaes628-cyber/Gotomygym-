@@ -66,6 +66,13 @@ export function Header() {
           >
             Aula experimental
           </a>
+          <a
+            href="/en"
+            aria-label="English version"
+            className="text-sm font-semibold text-zinc-400 transition-colors hover:text-accent"
+          >
+            EN
+          </a>
         </nav>
 
         <button
@@ -102,6 +109,13 @@ export function Header() {
             className="mt-4 rounded-full bg-accent px-6 py-4 text-center font-semibold text-ink"
           >
             Marca uma aula experimental
+          </a>
+          <a
+            href="/en"
+            onClick={() => setOpen(false)}
+            className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white"
+          >
+            English version
           </a>
         </nav>
       ) : null}
