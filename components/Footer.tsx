@@ -83,7 +83,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/5 px-6 pt-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/5 px-6 pt-6 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <span>
           © {new Date().getFullYear()} {business.name}® — marca registada.
           Todos os direitos reservados.

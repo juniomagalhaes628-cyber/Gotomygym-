@@ -62,7 +62,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-8">
-        <a href="#inicio" aria-label="Go to Gym — início" onClick={() => setOpen(false)}>
+        <a href="#inicio" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 

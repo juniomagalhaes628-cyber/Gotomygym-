@@ -19,6 +19,7 @@ export function Reviews() {
             <Reveal key={review.name} delay={(i % 3) * 0.08}>
               <figure className="card-hover flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-7 hover:border-accent/30">
                 <div
+                  role="img"
                   className="mb-4 flex gap-1 text-accent"
                   aria-label="5 estrelas"
                 >

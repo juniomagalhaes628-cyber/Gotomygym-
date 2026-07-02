@@ -66,7 +66,7 @@ export default function EnglishPage() {
       </a>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-ink/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-8">
-          <Link href="/en" aria-label="Go to Gym — home">
+          <Link href="/en">
             <Logo />
           </Link>
           <Link
@@ -139,7 +139,7 @@ export default function EnglishPage() {
               {touristReviews.map((review) => (
                 <Reveal key={review.name}>
                   <figure className="flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-7">
-                    <div className="mb-4 flex gap-1" aria-label="5 stars">
+                    <div role="img" className="mb-4 flex gap-1" aria-label="5 stars">
                       {Array.from({ length: 5 }).map((_, star) => (
                         <StarIcon
                           key={star}
@@ -235,7 +235,7 @@ export default function EnglishPage() {
       </main>
 
       <footer className="border-t border-white/5 bg-ink py-8">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <span>
             © {new Date().getFullYear()} {business.name}® — all rights
             reserved.
