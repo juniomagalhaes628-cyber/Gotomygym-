@@ -11,7 +11,7 @@ export function Location() {
         <SectionHeading
           eyebrow="Localização"
           title="Onde nos encontras"
-          subtitle="Estamos na Avenida Central de Portela, com estacionamento fácil."
+          subtitle={`Estamos na Avenida Central de Portela, ${business.address.landmark}, com estacionamento fácil.`}
         />
 
         <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-stretch">

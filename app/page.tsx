@@ -8,6 +8,7 @@ import { Gallery } from "@/components/Gallery";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Location } from "@/components/Location";
+import { Plans } from "@/components/Plans";
 import { Reviews } from "@/components/Reviews";
 import { Schedule } from "@/components/Schedule";
 import { buildFaqJsonLd } from "@/lib/jsonld";
@@ -26,6 +27,7 @@ export default function HomePage() {
         <Hero />
         <About />
         <Classes />
+        <Plans />
         <Gallery />
         <Schedule />
         <Reviews />

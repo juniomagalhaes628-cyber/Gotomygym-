@@ -20,12 +20,13 @@ export const business = {
   },
 
   address: {
-    street: "Avenida Central de Portela",
+    street: "Avenida Central de Portela, n.º 77",
     postalCode: "4575-398",
     city: "Penafiel",
     region: "Porto",
     country: "PT",
-    full: "Avenida Central de Portela, 4575-398 Penafiel",
+    full: "Avenida Central de Portela 77, 4575-398 Penafiel",
+    landmark: "junto às Termas de São Vicente",
   },
 
   // Coordenadas aproximadas (Portela, Penafiel) — afinar se necessário
@@ -48,6 +49,14 @@ export const business = {
     facebook: "https://www.facebook.com/gotogymfitness/",
     instagram: "https://www.instagram.com/gotogymfitness/",
   },
+
+  partners: {
+    urbanSportsClub:
+      "https://urbansportsclub.com/pt/venues/go-to-gym-termas-so-vicente-penafiel",
+  },
+
+  // Marca nacional registada n.º 701486 (Go to Gym, Unipessoal Lda)
+  legalName: "Go to Gym, Unipessoal Lda",
 
   /**
    * Horários de funcionamento.

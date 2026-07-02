@@ -117,7 +117,12 @@ export const faqs: Faq[] = [
   {
     question: "Como sei os preços e planos?",
     answer:
-      "Fala connosco pelo WhatsApp ou visita-nos — explicamos as opções sem compromisso e ajudamos-te a escolher o plano certo para ti.",
+      "Fala connosco pelo WhatsApp ou visita-nos — explicamos as opções sem compromisso e ajudamos-te a escolher o plano certo para ti. Fica também atento às campanhas que lançamos no Facebook.",
+  },
+  {
+    question: "Aceitam Urban Sports Club?",
+    answer:
+      "Sim! Somos parceiros do Urban Sports Club: com o teu passe USC podes treinar no Go to Gym sem marcação prévia.",
   },
   {
     question: "Estou de passagem por Penafiel. Posso treinar?",

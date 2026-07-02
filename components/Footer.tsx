@@ -84,8 +84,8 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-10 max-w-6xl border-t border-white/5 px-6 pt-6 text-sm text-zinc-500 sm:px-8">
-        © {new Date().getFullYear()} {business.name}. Todos os direitos
-        reservados.
+        © {new Date().getFullYear()} {business.name}® — marca registada. Todos
+        os direitos reservados.
       </div>
     </footer>
   );

@@ -11,6 +11,7 @@ export function buildLocalBusinessJsonLd() {
     "@type": "ExerciseGym",
     "@id": `${business.siteUrl}/#gym`,
     name: business.name,
+    legalName: business.legalName,
     description: business.description,
     url: business.siteUrl,
     telephone: business.phone.e164,
