@@ -49,6 +49,83 @@ export const gymClasses: GymClass[] = [
   },
 ];
 
+/**
+ * Avaliações reais do Google (traduzidas quando o original não é português).
+ * Acrescenta ou troca aqui — aparecem na secção "Avaliações".
+ */
+export type Review = {
+  name: string;
+  text: string;
+  meta?: string;
+};
+
+export const reviews: Review[] = [
+  {
+    name: "Paula Rocha",
+    text: "Excelente espaço, staff e ambiente. Um ginásio onde nos sentimos bem e queremos definitivamente voltar.",
+  },
+  {
+    name: "Louk den Hartogh",
+    text: "Ginásio maravilhoso e acolhedor! Ótimos equipamentos e muitos pesos. Mesmo sem falarmos português, como turistas, fomos muito bem recebidos. Uma ótima experiência de treino durante as nossas férias!",
+    meta: "traduzida do holandês",
+  },
+  {
+    name: "Ruben van Veen",
+    text: "O melhor ginásio que já frequentei. Equipamentos excelentes e staff super simpático.",
+    meta: "traduzida do holandês",
+  },
+  {
+    name: "David Gomes",
+    text: "Boas instalações, e sempre prontos para nos ajudar em qualquer questão.",
+  },
+  {
+    name: "Siem Bleker",
+    text: "O melhor ginásio da zona, com staff simpático. Ótimo para usar durante as férias ou como ginásio habitual.",
+    meta: "traduzida do holandês",
+  },
+  {
+    name: "Stijn De Jong",
+    text: "Ótimo ginásio, com muitos equipamentos. E ainda tinha água gelada grátis!",
+    meta: "traduzida do holandês",
+  },
+];
+
+/**
+ * Perguntas frequentes — também geram o schema FAQPage para o Google.
+ */
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+export const faqs: Faq[] = [
+  {
+    question: "Como marco uma aula experimental?",
+    answer:
+      "Envia-nos mensagem pelo WhatsApp (916 337 461), liga-nos ou passa pelo ginásio na Avenida Central de Portela. Combinamos contigo o melhor dia e hora.",
+  },
+  {
+    question: "Preciso de ter experiência para começar?",
+    answer:
+      "Não. A nossa equipa acompanha-te desde o primeiro treino, explica os equipamentos e ajusta o plano ao teu nível e objetivos.",
+  },
+  {
+    question: "Quais são os horários?",
+    answer:
+      "Segunda a sexta das 7h às 22h, sábado das 7h às 19h e domingo das 8h às 12h.",
+  },
+  {
+    question: "Como sei os preços e planos?",
+    answer:
+      "Fala connosco pelo WhatsApp ou visita-nos — explicamos as opções sem compromisso e ajudamos-te a escolher o plano certo para ti.",
+  },
+  {
+    question: "Estou de passagem por Penafiel. Posso treinar?",
+    answer:
+      "Claro! Recebemos regularmente visitantes e turistas. Contacta-nos ou aparece no ginásio.",
+  },
+];
+
 export const aboutText = {
   title: "Mais do que um ginásio",
   paragraphs: [

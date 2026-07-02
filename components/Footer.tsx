@@ -1,5 +1,5 @@
 import { business } from "@/lib/business";
-import { FacebookIcon, PhoneIcon } from "@/components/icons";
+import { FacebookIcon, InstagramIcon, PhoneIcon } from "@/components/icons";
 import { Logo } from "@/components/Logo";
 
 export function Footer() {
@@ -20,6 +20,15 @@ export function Footer() {
               className="rounded-full border border-white/10 p-2.5 text-smoke transition-colors hover:border-accent hover:text-accent"
             >
               <FacebookIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={business.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram do Go to Gym"
+              className="rounded-full border border-white/10 p-2.5 text-smoke transition-colors hover:border-accent hover:text-accent"
+            >
+              <InstagramIcon className="h-5 w-5" />
             </a>
             <a
               href={`tel:${business.phone.e164}`}

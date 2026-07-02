@@ -1,4 +1,5 @@
 import { business } from "@/lib/business";
+import { faqs } from "@/lib/content";
 
 /**
  * JSON-LD schema.org ExerciseGym (subtipo de LocalBusiness)
@@ -28,11 +29,12 @@ export function buildLocalBusinessJsonLd() {
       longitude: business.geo.lng,
     },
     hasMap: business.googleMapsUrl,
-    sameAs: [business.social.facebook],
+    sameAs: [business.social.facebook, business.social.instagram],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: business.rating.value,
       bestRating: business.rating.scale,
+      ratingCount: business.rating.count,
     },
     openingHoursSpecification: business.hours.map((h) => ({
       "@type": "OpeningHoursSpecification",
@@ -41,5 +43,23 @@ export function buildLocalBusinessJsonLd() {
       closes: h.closes,
     })),
     priceRange: "€€",
+  };
+}
+
+/**
+ * JSON-LD schema.org FAQPage — gerado a partir das FAQ em lib/content.ts.
+ */
+export function buildFaqJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }

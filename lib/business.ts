@@ -41,10 +41,12 @@ export const business = {
   rating: {
     value: 4.8,
     scale: 5,
+    count: 28, // nº de avaliações no Google — atualizar de vez em quando
   },
 
   social: {
     facebook: "https://www.facebook.com/gotogymfitness/",
+    instagram: "https://www.instagram.com/gotogymfitness/",
   },
 
   /**

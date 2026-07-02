@@ -64,6 +64,14 @@ lib/
   jsonld.ts           # schema.org LocalBusiness/ExerciseGym
 ```
 
+### Fotos (galeria)
+
+Coloca as fotografias em **`public/gallery/`** (jpg, png ou webp) — aparecem automaticamente na secção "Galeria" por ordem alfabética (usa nomes tipo `01-sala.jpg`, `02-equipa.jpg` para controlar a ordem). Sem fotos na pasta, a secção fica oculta.
+
+### Avaliações e FAQ
+
+As avaliações do Google e as perguntas frequentes estão em **`lib/content.ts`** (`reviews` e `faqs`). As FAQ geram automaticamente o schema FAQPage para os resultados do Google.
+
 ### Logo
 
 O logo (moldura quadrada amarela + "GO / TO GYM") está em `components/Logo.tsx` (header e footer), `app/icon.svg` (favicon) e `app/opengraph-image.tsx` (imagem de partilha nas redes sociais).
