@@ -1,12 +1,7 @@
 import { aboutText } from "@/lib/content";
 import { business } from "@/lib/business";
 import { Reveal } from "@/components/Reveal";
-
-const stats = [
-  { value: "4,8★", label: "Classificação Google" },
-  { value: "7h–22h", label: "Aberto todos os dias úteis" },
-  { value: "100%", label: "Acompanhamento local" },
-];
+import { Stats } from "@/components/Stats";
 
 export function About() {
   return (
@@ -29,16 +24,7 @@ export function About() {
           </p>
         </Reveal>
 
-        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-          {stats.map((stat, i) => (
-            <Reveal key={stat.label} delay={i * 0.1}>
-              <div className="rounded-2xl border border-white/5 bg-carbon p-6">
-                <p className="font-display text-4xl text-accent">{stat.value}</p>
-                <p className="mt-2 text-sm text-smoke">{stat.label}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Stats />
       </div>
     </section>
   );

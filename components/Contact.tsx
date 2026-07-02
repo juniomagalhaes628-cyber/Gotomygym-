@@ -142,7 +142,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 font-semibold text-ink transition-colors hover:bg-accent-strong"
+                className="btn-glow inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 font-semibold text-ink transition-transform hover:bg-accent-strong active:scale-[0.98]"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Enviar por WhatsApp

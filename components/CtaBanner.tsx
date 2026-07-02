@@ -34,7 +34,7 @@ export function CtaBanner() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-white transition-transform hover:scale-[1.03]"
+            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-white transition-transform hover:scale-[1.03] active:scale-[0.97]"
           >
             Marca a tua aula experimental
             <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />

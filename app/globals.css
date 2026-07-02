@@ -83,9 +83,58 @@ body::after {
   animation: ticker-scroll 30s linear infinite;
 }
 
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* acordeão FAQ com abertura suave (progressive enhancement, Chrome 131+) */
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 0.3s ease,
+      content-visibility 0.3s allow-discrete;
+  }
+
+  details[open]::details-content {
+    height: auto;
+  }
+}
+
+/* pulso ocasional do botão flutuante de WhatsApp */
+@keyframes float-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  70%,
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+.float-ping {
+  animation: float-ping 2.8s ease-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-track {
     animation: none;
+  }
+
+  .float-ping {
+    animation: none;
+    opacity: 0;
+  }
+
+  details::details-content {
+    transition: none;
   }
 }
 

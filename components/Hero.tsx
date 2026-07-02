@@ -1,7 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { business, whatsappUrl } from "@/lib/business";
 import { ArrowRightIcon, ChevronDownIcon, StarIcon } from "@/components/icons";
 
@@ -13,13 +18,26 @@ const HeroBackground = dynamic(() => import("@/components/HeroBackground"), {
 
 const TRIAL_MESSAGE = `Olá! Gostava de marcar uma aula experimental no ${business.name}.`;
 
+const EASE = [0.21, 0.47, 0.32, 0.98] as const;
+
+const TITLE_WORDS = [
+  { text: "Go", accent: false },
+  { text: "to", accent: true },
+  { text: "Gym", accent: false },
+];
+
 export function Hero() {
   const reduced = useReducedMotion();
+
+  // parallax: o conteúdo sobe e desvanece suavemente ao fazer scroll
+  const { scrollY } = useScroll();
+  const contentY = useTransform(scrollY, [0, 700], [0, 110]);
+  const contentOpacity = useTransform(scrollY, [0, 550], [1, 0.15]);
 
   const fadeUp = (delay: number) => ({
     initial: reduced ? false : { opacity: 0, y: 28 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] as const },
+    transition: { duration: 0.6, delay, ease: EASE },
   });
 
   return (
@@ -36,7 +54,10 @@ export function Hero() {
         className="pointer-events-none absolute -right-4 top-1/2 z-[1] hidden h-72 w-72 -translate-y-1/3 -rotate-6 border-4 border-accent/[0.07] lg:block"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-28 pb-20 sm:px-8">
+      <motion.div
+        style={reduced ? undefined : { y: contentY, opacity: contentOpacity }}
+        className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-28 pb-20 sm:px-8"
+      >
         <motion.p
           {...fadeUp(0.05)}
           className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-smoke backdrop-blur"
@@ -46,45 +67,58 @@ export function Hero() {
           {business.address.city}
         </motion.p>
 
-        <motion.h1
-          {...fadeUp(0.12)}
-          className="font-display text-6xl uppercase leading-[0.95] tracking-wide text-white sm:text-7xl md:text-8xl lg:text-9xl"
-        >
-          Go <span className="text-accent">to</span> Gym
-        </motion.h1>
+        {/* título com reveal por máscara, palavra a palavra */}
+        <h1 className="font-display text-6xl uppercase leading-[0.95] tracking-wide text-white sm:text-7xl md:text-8xl lg:text-9xl">
+          {TITLE_WORDS.map((word, i) => (
+            <span
+              key={word.text}
+              className="inline-block overflow-hidden pb-[0.08em] align-bottom"
+            >
+              <motion.span
+                initial={reduced ? false : { y: "110%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.7, delay: 0.12 + i * 0.1, ease: EASE }}
+                className={`inline-block ${word.accent ? "text-accent" : ""}`}
+              >
+                {word.text}
+              </motion.span>
+              {i < TITLE_WORDS.length - 1 ? " " : ""}
+            </span>
+          ))}
+        </h1>
 
         <motion.p
-          {...fadeUp(0.22)}
+          {...fadeUp(0.32)}
           className="mt-6 max-w-xl text-lg text-zinc-300 sm:text-xl"
         >
           {business.claim} O teu ginásio em Portela, Penafiel — treino a sério,
           ambiente de família.
         </motion.p>
 
-        <motion.div {...fadeUp(0.32)} className="mt-10 flex flex-wrap items-center gap-4">
+        <motion.div {...fadeUp(0.42)} className="mt-10 flex flex-wrap items-center gap-4">
           <a
             href={whatsappUrl(TRIAL_MESSAGE)}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-glow group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 font-semibold text-ink hover:bg-accent-strong"
+            className="btn-glow group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 font-semibold text-ink transition-transform hover:bg-accent-strong active:scale-[0.97]"
           >
             Marca uma aula experimental
             <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </a>
           <a
             href="#aulas"
-            className="inline-flex items-center rounded-full border border-white/15 px-7 py-4 font-semibold text-white transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center rounded-full border border-white/15 px-7 py-4 font-semibold text-white transition-all hover:border-accent hover:text-accent active:scale-[0.97]"
           >
             Ver modalidades
           </a>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* fade suave para a secção seguinte */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent" />
 
       <motion.a
-        {...fadeUp(0.6)}
+        {...fadeUp(0.7)}
         href="#sobre"
         aria-label="Descer para a secção seguinte"
         className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1 text-zinc-500 transition-colors hover:text-accent sm:flex"
