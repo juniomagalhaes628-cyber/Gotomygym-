@@ -63,7 +63,7 @@ void main() {
 
   vec3 base = vec3(0.028, 0.030, 0.036);
   vec3 charcoal = vec3(0.075, 0.078, 0.090);
-  vec3 accent = vec3(0.784, 0.949, 0.290); // #c8f24a
+  vec3 accent = vec3(0.949, 0.949, 0.0); // #f2f200 (amarelo do logo)
 
   vec3 col = mix(base, charcoal, smoothstep(0.25, 0.85, n));
   // brilho subtil do accent nas cristas do noise

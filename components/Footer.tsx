@@ -1,14 +1,13 @@
 import { business } from "@/lib/business";
 import { FacebookIcon, PhoneIcon } from "@/components/icons";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
     <footer className="border-t border-white/5 bg-ink py-12">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 sm:px-8 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl uppercase tracking-wide text-white">
-            Go <span className="text-accent">to</span> Gym
-          </p>
+          <Logo />
           <p className="mt-3 text-sm leading-relaxed text-smoke">
             {business.address.full}
           </p>

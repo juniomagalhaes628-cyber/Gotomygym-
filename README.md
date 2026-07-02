@@ -25,11 +25,11 @@ Em **`lib/content.ts`**: o array `gymClasses` (nome, descrição e ícone de cad
 
 ### Cores
 
-Em **`app/globals.css`**, no bloco `@theme`. Para mudar a cor de destaque troca `--color-accent` (e `--color-accent-strong` para o estado hover). Ex.: laranja em vez de verde-lima:
+A paleta segue o logo oficial: preto + amarelo `#f2f200`. Em **`app/globals.css`**, no bloco `@theme`, troca `--color-accent` (e `--color-accent-strong` para o estado hover) para mudar a cor de destaque em todo o site:
 
 ```css
---color-accent: #ff7a1a;
---color-accent-strong: #e56607;
+--color-accent: #f2f200;
+--color-accent-strong: #d4d400;
 ```
 
 Nota: o brilho do fundo animado do hero usa a mesma cor definida diretamente no shader — em `components/HeroBackground.tsx`, linha `vec3 accent = vec3(...)` (valores RGB de 0 a 1).
@@ -63,6 +63,19 @@ lib/
   content.ts          # aulas e textos editáveis
   jsonld.ts           # schema.org LocalBusiness/ExerciseGym
 ```
+
+### Logo
+
+O logo (moldura quadrada amarela + "GO / TO GYM") está em `components/Logo.tsx` (header e footer), `app/icon.svg` (favicon) e `app/opengraph-image.tsx` (imagem de partilha nas redes sociais).
+
+## Segurança
+
+O site envia headers de segurança configurados em `next.config.ts`:
+
+- **Content-Security-Policy** — o browser só executa scripts do próprio site, do SDK do Facebook e permite os iframes do Facebook/Google Maps. Qualquer script injetado de outra origem é bloqueado (proteção direta contra infeções como a do site antigo).
+- **X-Content-Type-Options: nosniff**, **X-Frame-Options: SAMEORIGIN** (anti-clickjacking), **Referrer-Policy**, **Permissions-Policy** (câmara/microfone/localização desativados) e **Strict-Transport-Security** (força HTTPS).
+
+Além disso: não há base de dados nem área de administração para atacar (site estático), não há plugins de terceiros, todos os links externos usam `rel="noopener noreferrer"`, e o formulário não guarda dados — abre diretamente o WhatsApp.
 
 ## Performance
 

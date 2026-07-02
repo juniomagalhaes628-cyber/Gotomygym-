@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { business, whatsappUrl } from "@/lib/business";
 import { MenuIcon, XIcon } from "@/components/icons";
+import { Logo } from "@/components/Logo";
 
 const NAV_LINKS = [
   { href: "#sobre", label: "Sobre" },
@@ -41,12 +42,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-8">
-        <a
-          href="#inicio"
-          className="font-display text-xl uppercase tracking-wide text-white"
-          onClick={() => setOpen(false)}
-        >
-          Go <span className="text-accent">to</span> Gym
+        <a href="#inicio" aria-label="Go to Gym — início" onClick={() => setOpen(false)}>
+          <Logo />
         </a>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Navegação principal">
