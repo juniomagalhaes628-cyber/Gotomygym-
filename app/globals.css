@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta — troca o accent aqui para mudar a cor do site inteiro */
+  --color-ink: #0a0a0c;
+  --color-carbon: #121215;
+  --color-steel: #1b1b20;
+  --color-smoke: #a1a1aa;
+  --color-accent: #c8f24a;
+  --color-accent-strong: #a9d92c;
+
+  --font-display: var(--font-display), "Arial Black", sans-serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #f4f4f5;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
