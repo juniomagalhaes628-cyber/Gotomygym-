@@ -1,6 +1,7 @@
 import { About } from "@/components/About";
 import { Classes } from "@/components/Classes";
 import { Contact } from "@/components/Contact";
+import { CtaBanner } from "@/components/CtaBanner";
 import { FacebookFeed } from "@/components/FacebookFeed";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
@@ -11,6 +12,7 @@ import { Location } from "@/components/Location";
 import { Plans } from "@/components/Plans";
 import { Reviews } from "@/components/Reviews";
 import { Schedule } from "@/components/Schedule";
+import { Ticker } from "@/components/Ticker";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { buildFaqJsonLd } from "@/lib/jsonld";
 
@@ -32,6 +34,7 @@ export default function HomePage() {
       <Header />
       <main id="conteudo">
         <Hero />
+        <Ticker />
         <About />
         <Classes />
         <Plans />
@@ -41,6 +44,7 @@ export default function HomePage() {
         <Location />
         <FacebookFeed />
         <Faq />
+        <CtaBanner />
         <Contact />
       </main>
       <Footer />

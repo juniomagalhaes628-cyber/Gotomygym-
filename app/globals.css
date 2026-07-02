@@ -35,3 +35,23 @@ body {
   background-color: var(--color-accent);
   color: var(--color-ink);
 }
+
+/* faixa de modalidades em scroll contínuo */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
