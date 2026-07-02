@@ -19,12 +19,30 @@ const NAV_LINKS = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // destaca no menu a secção atualmente visível
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        }
+      },
+      { rootMargin: "-35% 0px -60% 0px" }
+    );
+    for (const link of NAV_LINKS) {
+      const el = document.getElementById(link.href.slice(1));
+      if (el) observer.observe(el);
+    }
+    return () => observer.disconnect();
   }, []);
 
   // bloqueia o scroll do body quando o menu mobile está aberto
@@ -49,15 +67,21 @@ export function Header() {
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Navegação principal">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-zinc-300 transition-colors hover:text-accent"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = active === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "true" : undefined}
+                className={`text-sm font-medium transition-colors hover:text-accent ${
+                  isActive ? "text-accent" : "text-zinc-300"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <a
             href={whatsappUrl(`Olá! Gostava de marcar uma aula experimental no ${business.name}.`)}
             target="_blank"
