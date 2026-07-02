@@ -17,7 +17,7 @@ npm start        # servir a build de produção
 
 Tudo está centralizado em **`lib/business.ts`**. Edita esse ficheiro e o site inteiro atualiza (hero, horários, contactos, footer, JSON-LD, sitemap).
 
-Quando o domínio final estiver definido, troca também o `siteUrl` nesse ficheiro (afeta SEO, sitemap e Open Graph). Se necessário, afina as coordenadas em `geo` (usadas no JSON-LD).
+Quando o domínio final estiver definido, troca também o `siteUrl` nesse ficheiro (afeta SEO, sitemap e Open Graph). As coordenadas em `geo` posicionam o pin do mapa e alimentam o SEO local — para afinar ao metro, clica com o botão direito sobre o ginásio no Google Maps, copia as coordenadas e cola-as em `geo`.
 
 ### Textos e aulas/modalidades
 

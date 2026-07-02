@@ -29,10 +29,12 @@ export const business = {
     landmark: "junto às Termas de São Vicente",
   },
 
-  // Coordenadas aproximadas (Portela, Penafiel) — afinar se necessário
+  // Coordenadas do código postal 4575-398 (Avenida Central de Portela).
+  // Para afinar ao metro: no Google Maps, clica com o botão direito sobre
+  // o ginásio e copia as coordenadas para aqui — o mapa e o SEO atualizam.
   geo: {
-    lat: 41.1266,
-    lng: -8.2896,
+    lat: 41.105192,
+    lng: -8.26699,
   },
 
   googlePlaceId: "ChIJB01gZ7ObJA0RB8TlBxz4xKM",
@@ -89,10 +91,14 @@ export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination
   `${business.name}, ${business.address.full}`
 )}&destination_place_id=${business.googlePlaceId}`;
 
-/** Embed do mapa (não requer chave de API). */
-export const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
-  `${business.name}, ${business.address.full}`
-)}&z=16&hl=pt-PT&output=embed`;
+/**
+ * Embed do mapa (não requer chave de API).
+ * Usa as coordenadas exatas de `business.geo` — ao contrário da pesquisa
+ * por nome, o pin nunca aparece no sítio errado.
+ */
+export const mapEmbedUrl = `https://maps.google.com/maps?q=${business.geo.lat},${business.geo.lng}(${encodeURIComponent(
+  business.name
+)})&z=17&hl=pt-PT&output=embed`;
 
 /** Link direto para conversa de WhatsApp. */
 export const whatsappUrl = (message?: string) =>
