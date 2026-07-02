@@ -34,7 +34,7 @@ export function Classes() {
             const Icon = ICONS[gymClass.icon];
             return (
               <Reveal key={gymClass.name} delay={(i % 3) * 0.08}>
-                <article className="group h-full rounded-2xl border border-white/5 bg-steel/60 p-7 transition-colors hover:border-accent/40">
+                <article className="card-hover group h-full rounded-2xl border border-white/5 bg-steel/60 p-7 hover:border-accent/40">
                   <div className="mb-5 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
                     <Icon className="h-7 w-7" />
                   </div>

@@ -17,7 +17,7 @@ export function Reviews() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review, i) => (
             <Reveal key={review.name} delay={(i % 3) * 0.08}>
-              <figure className="flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-7">
+              <figure className="card-hover flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-7 hover:border-accent/30">
                 <div
                   className="mb-4 flex gap-1 text-accent"
                   aria-label="5 estrelas"

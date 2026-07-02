@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
 import { business, whatsappUrl } from "@/lib/business";
-import { ArrowRightIcon, StarIcon } from "@/components/icons";
+import { ArrowRightIcon, ChevronDownIcon, StarIcon } from "@/components/icons";
 
 // O canvas WebGL só carrega no cliente, depois do primeiro paint —
 // o texto do hero (LCP) renderiza imediatamente sem esperar pelo shader.
@@ -72,6 +72,20 @@ export function Hero() {
 
       {/* fade suave para a secção seguinte */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent" />
+
+      <motion.a
+        {...fadeUp(0.6)}
+        href="#sobre"
+        aria-label="Descer para a secção seguinte"
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1 text-zinc-500 transition-colors hover:text-accent sm:flex"
+      >
+        <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">
+          Scroll
+        </span>
+        <ChevronDownIcon
+          className={`h-4 w-4 ${reduced ? "" : "animate-bounce"}`}
+        />
+      </motion.a>
     </section>
   );
 }

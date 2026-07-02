@@ -101,6 +101,7 @@ export function Contact() {
                 <input
                   type="text"
                   required
+                  maxLength={80}
                   autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -115,6 +116,7 @@ export function Contact() {
                 </span>
                 <input
                   type="text"
+                  maxLength={120}
                   autoComplete="tel"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
@@ -130,6 +132,7 @@ export function Contact() {
                 <textarea
                   required
                   rows={4}
+                  maxLength={1000}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Ex.: Quero marcar uma aula experimental…"

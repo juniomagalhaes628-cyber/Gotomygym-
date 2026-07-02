@@ -12,6 +12,7 @@ import { Location } from "@/components/Location";
 import { Plans } from "@/components/Plans";
 import { Reviews } from "@/components/Reviews";
 import { Schedule } from "@/components/Schedule";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Ticker } from "@/components/Ticker";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { buildFaqJsonLd } from "@/lib/jsonld";
@@ -31,6 +32,7 @@ export default function HomePage() {
       >
         Saltar para o conteúdo
       </a>
+      <ScrollProgress />
       <Header />
       <main id="conteudo">
         <Hero />

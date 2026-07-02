@@ -88,6 +88,10 @@ O site envia headers de segurança configurados em `next.config.ts`:
 
 - **Content-Security-Policy** — o browser só executa scripts do próprio site, do SDK do Facebook e permite os iframes do Facebook/Google Maps. Qualquer script injetado de outra origem é bloqueado (proteção direta contra infeções como a do site antigo).
 - **X-Content-Type-Options: nosniff**, **X-Frame-Options: SAMEORIGIN** (anti-clickjacking), **Referrer-Policy**, **Permissions-Policy** (câmara/microfone/localização desativados) e **Strict-Transport-Security** (força HTTPS).
+- **Cross-Origin-Opener-Policy** e **Cross-Origin-Resource-Policy** (isolamento de origem), **X-DNS-Prefetch-Control: off** e **X-Permitted-Cross-Domain-Policies: none**.
+- **`/.well-known/security.txt`** (RFC 9116) com contacto para reporte responsável de vulnerabilidades.
+- **Dependências sem vulnerabilidades conhecidas** (`npm audit`: 0) — o `overrides` no package.json força a versão corrigida do postcss embutido no Next.js.
+- Campos do formulário com limites de tamanho (`maxLength`).
 
 Além disso: não há base de dados nem área de administração para atacar (site estático), não há plugins de terceiros, todos os links externos usam `rel="noopener noreferrer"`, e o formulário não guarda dados — abre diretamente o WhatsApp.
 

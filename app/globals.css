@@ -55,3 +55,47 @@ body {
     animation: none;
   }
 }
+
+/* elevação subtil dos cards ao passar o rato */
+.card-hover {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* anel de foco consistente com a marca (navegação por teclado) */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* scrollbar escura a condizer com o tema */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a40 var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a40;
+  border-radius: 8px;
+  border: 2px solid var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}

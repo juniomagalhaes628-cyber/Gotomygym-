@@ -21,7 +21,7 @@ export function Plans() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           <Reveal>
-            <article className="flex h-full flex-col rounded-2xl border border-accent/40 bg-steel/60 p-8">
+            <article className="card-hover flex h-full flex-col rounded-2xl border border-accent/40 bg-steel/60 p-8">
               <div className="mb-5 inline-flex self-start rounded-xl bg-accent/10 p-3 text-accent">
                 <StarIcon className="h-7 w-7" />
               </div>
@@ -50,7 +50,7 @@ export function Plans() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <article className="flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-8">
+            <article className="card-hover flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-8 hover:border-accent/30">
               <div className="mb-5 inline-flex self-start rounded-xl bg-accent/10 p-3 text-accent">
                 <HeartPulseIcon className="h-7 w-7" />
               </div>
@@ -76,7 +76,7 @@ export function Plans() {
           </Reveal>
 
           <Reveal delay={0.16}>
-            <article className="flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-8">
+            <article className="card-hover flex h-full flex-col rounded-2xl border border-white/5 bg-steel/60 p-8 hover:border-accent/30">
               <div className="mb-5 inline-flex self-start rounded-xl bg-accent/10 p-3 text-accent">
                 <UsersIcon className="h-7 w-7" />
               </div>

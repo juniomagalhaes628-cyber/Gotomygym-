@@ -4,6 +4,7 @@ import { business, directionsUrl, mapEmbedUrl, whatsappUrl } from "@/lib/busines
 import { ConsentEmbed } from "@/components/ConsentEmbed";
 import { Logo } from "@/components/Logo";
 import { Reveal } from "@/components/Reveal";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { SetLang } from "@/components/SetLang";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import {
@@ -56,6 +57,7 @@ export default function EnglishPage() {
   return (
     <>
       <SetLang lang="en" />
+      <ScrollProgress />
       <a
         href="#content"
         className="sr-only z-[60] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:font-semibold focus:text-ink"

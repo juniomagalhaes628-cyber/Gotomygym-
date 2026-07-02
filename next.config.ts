@@ -42,6 +42,14 @@ const securityHeaders = [
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains",
   },
+  // isola a janela de outras origens (bloqueia ataques via window.opener)
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  // impede outros sites de embeberem os nossos recursos diretamente
+  { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+  // desativa pre-fetch de DNS não solicitado
+  { key: "X-DNS-Prefetch-Control", value: "off" },
+  // bloqueia políticas cross-domain de Flash/PDF legacy
+  { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
 ];
 
 const nextConfig: NextConfig = {
