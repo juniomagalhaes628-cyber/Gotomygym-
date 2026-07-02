@@ -23,8 +23,14 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <a
+        href="#conteudo"
+        className="sr-only z-[60] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:font-semibold focus:text-ink"
+      >
+        Saltar para o conteúdo
+      </a>
       <Header />
-      <main>
+      <main id="conteudo">
         <Hero />
         <About />
         <Classes />

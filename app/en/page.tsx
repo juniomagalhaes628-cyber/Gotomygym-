@@ -4,6 +4,7 @@ import { business, directionsUrl, mapEmbedUrl, whatsappUrl } from "@/lib/busines
 import { ConsentEmbed } from "@/components/ConsentEmbed";
 import { Logo } from "@/components/Logo";
 import { Reveal } from "@/components/Reveal";
+import { SetLang } from "@/components/SetLang";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import {
   ClockIcon,
@@ -54,6 +55,13 @@ const hoursEn = [
 export default function EnglishPage() {
   return (
     <>
+      <SetLang lang="en" />
+      <a
+        href="#content"
+        className="sr-only z-[60] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:font-semibold focus:text-ink"
+      >
+        Skip to content
+      </a>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-ink/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-8">
           <Link href="/en" aria-label="Go to Gym — home">
@@ -68,7 +76,7 @@ export default function EnglishPage() {
         </div>
       </header>
 
-      <main className="bg-ink">
+      <main id="content" className="bg-ink">
         {/* Hero */}
         <section className="relative flex min-h-[70svh] items-center overflow-hidden bg-[radial-gradient(1000px_600px_at_80%_10%,rgba(242,242,0,0.07),transparent_60%),radial-gradient(800px_500px_at_10%_90%,rgba(242,242,0,0.05),transparent_60%)]">
           <div className="mx-auto w-full max-w-6xl px-6 pb-16 pt-32 sm:px-8">

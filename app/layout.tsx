@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Anton, Inter } from "next/font/google";
 import { business } from "@/lib/business";
 import { buildLocalBusinessJsonLd } from "@/lib/jsonld";
@@ -16,6 +16,10 @@ const sans = Inter({
   variable: "--font-sans",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0c",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
