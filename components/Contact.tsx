@@ -32,7 +32,7 @@ export function Contact() {
     "w-full rounded-xl border border-white/10 bg-steel/60 px-4 py-3.5 text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-accent";
 
   return (
-    <section id="contactos" className="bg-carbon py-24">
+    <section id="contactos" className="cv-auto bg-carbon py-24">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <SectionHeading
           eyebrow="Contactos"

@@ -79,7 +79,7 @@ function FacebookPagePlugin() {
 
 export function FacebookFeed() {
   return (
-    <section id="novidades" className="bg-ink py-24">
+    <section id="novidades" className="cv-auto bg-ink py-24">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <SectionHeading
           eyebrow="Novidades"

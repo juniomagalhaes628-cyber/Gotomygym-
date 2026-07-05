@@ -4,8 +4,17 @@ import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-ink py-12">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 sm:px-8 md:grid-cols-3">
+    <footer className="relative overflow-hidden border-t border-white/5 bg-ink py-12">
+      {/* watermark gigante do wordmark */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display text-[8rem] leading-none text-transparent opacity-[0.05] md:text-[13rem]"
+        style={{ WebkitTextStroke: "2px #f2f200" }}
+      >
+        GO TO GYM
+      </div>
+
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 sm:px-8 md:grid-cols-3">
         <div>
           <Logo />
           <p className="mt-3 text-sm leading-relaxed text-smoke">
@@ -83,7 +92,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/5 px-6 pt-6 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <div className="relative mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/5 px-6 pt-6 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <span>
           © {new Date().getFullYear()} {business.name}® — marca registada.
           Todos os direitos reservados.

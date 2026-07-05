@@ -8,7 +8,7 @@ import { ArrowRightIcon } from "@/components/icons";
  */
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-accent py-20">
+    <section className="relative overflow-hidden bg-accent py-28 [clip-path:polygon(0_2.5rem,100%_0,100%_calc(100%-2.5rem),0_100%)]">
       {/* motivo do logo em outline sobre o amarelo */}
       <div
         aria-hidden="true"

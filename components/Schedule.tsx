@@ -10,7 +10,7 @@ export function Schedule() {
   const isToday = useIsToday();
 
   return (
-    <section id="horarios" className="bg-ink py-24">
+    <section id="horarios" className="cv-auto bg-ink py-24">
       <div className="mx-auto max-w-3xl px-6 sm:px-8">
         <SectionHeading
           eyebrow="Horários"

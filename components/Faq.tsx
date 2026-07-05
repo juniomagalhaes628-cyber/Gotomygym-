@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/SectionHeading";
  */
 export function Faq() {
   return (
-    <section id="faq" className="bg-ink py-24">
+    <section id="faq" className="cv-auto bg-ink py-24">
       <div className="mx-auto max-w-3xl px-6 sm:px-8">
         <SectionHeading
           eyebrow="Perguntas frequentes"

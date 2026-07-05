@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { Classes } from "@/components/Classes";
+import { Community } from "@/components/Community";
 import { Contact } from "@/components/Contact";
 import { CtaBanner } from "@/components/CtaBanner";
 import { FacebookFeed } from "@/components/FacebookFeed";
@@ -41,6 +42,7 @@ export default function HomePage() {
         <Classes />
         <Plans />
         <Gallery />
+        <Community />
         <Schedule />
         <Reviews />
         <Location />

@@ -70,6 +70,10 @@ Coloca as fotografias em **`public/gallery/`** (jpg, png ou webp) — aparecem a
 
 > As imagens atuais são placeholders de marca gerados automaticamente — substitui-as por fotografias reais do ginásio quando as tiveres (basta apagar as atuais e colocar as novas).
 
+### Fotos de eventos (secção Comunidade)
+
+Coloca fotos de eventos (corridas, festas, atividades) em **`public/community/`** — ativam automaticamente a secção "Comunidade", uma tira horizontal com legendas. O nome do ficheiro define a ordem e a legenda: `01-corrida-dos-moinhos.jpg` → "Corrida dos moinhos". Sem fotos, a secção fica oculta.
+
 ### Preço da mensalidade
 
 Em **`lib/business.ts`**, campo `pricing.monthly` — atualiza o número e o site inteiro (secção Planos, FAQ, página EN e schema do Google) muda de uma vez.

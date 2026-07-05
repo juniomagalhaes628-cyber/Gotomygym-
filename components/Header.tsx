@@ -74,8 +74,10 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "true" : undefined}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  isActive ? "text-accent" : "text-zinc-300"
+                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:origin-left after:bg-accent after:transition-transform after:duration-300 hover:text-accent hover:after:scale-x-100 ${
+                  isActive
+                    ? "text-accent after:scale-x-100"
+                    : "text-zinc-300 after:scale-x-0"
                 }`}
               >
                 {link.label}

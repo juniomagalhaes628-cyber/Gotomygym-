@@ -106,6 +106,35 @@ body::after {
   }
 }
 
+/* secções abaixo do fold: o browser só as renderiza quando se aproximam
+   do viewport (poupa main-thread no carregamento inicial) */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* avaliações em scroll contínuo (duas filas, direções opostas) */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-x 50s linear infinite;
+}
+
+.marquee-track[data-direction="reverse"] {
+  animation-direction: reverse;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* pulso ocasional do botão flutuante de WhatsApp */
 @keyframes float-ping {
   0% {
@@ -135,6 +164,15 @@ body::after {
 
   details::details-content {
     transition: none;
+  }
+
+  /* filas de avaliações ficam estáticas, com scroll manual */
+  .marquee {
+    overflow-x: auto;
+  }
+
+  .marquee-track {
+    animation: none;
   }
 }
 

@@ -6,7 +6,7 @@ import { MapPinIcon } from "@/components/icons";
 
 export function Location() {
   return (
-    <section id="localizacao" className="bg-carbon py-24">
+    <section id="localizacao" className="cv-auto bg-carbon py-24">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <SectionHeading
           eyebrow="Localização"
